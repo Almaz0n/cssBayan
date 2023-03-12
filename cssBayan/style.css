@@ -1,42 +1,53 @@
 
 .acor-container {
-    margin: 20px 0;
+    margin:0 auto;/*Центрирование блока*/
+    background:#ffffff;/*Цвет блока*/
+    max-width:100em;/*Максимальная ширина при больших разрешениях*/
+    min-width:10em;/*Минимальная ширина при маленьких разрешениях*/
+    width:auto;/*Ширина в зависимости от разрешения экрана*/
+    display: flexd;
+    justify-content: center;
+    margin: 0 auto;
 }
 .acor-container .acor-image {
-    width: calc(100% - 40px);
+    color: rgba(73, 50, 50, 0.5);
+    width: calc(100% - 3em);
     margin: 0 auto;
     height: 0;
-    color: rgba(0, 0, 0, 0);
-    background-color: #BFE2FF;
-    line-height: 18px;
-    padding: 0 30px;
+    line-height: 1em;
+    padding: 0 auto;
     box-sizing: border-box;
     transition: color 0.5s, padding 0.5s;
     overflow: hidden;
     font-family: Verdana, sans-serif; 
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
+    font-size: 1em;
 }
 .acor-container .acor-image .image {
-    margin: 0 0 10px;
+    margin: 0;
 }
+
+.acor-image {
+    width: 70%;
+    text-align: center;
+}
+
 .acor-container label {
     cursor: pointer;
-    background-color: #337AB7;
+    /* background-color: #337AB7; */
     display: block;
-    padding: 15px 20px;
+    /* padding: 15px 20px; */
     width: 100%;
-    color: #BFE2FF;
+    color: #0190f0;
     font-weight: 300;
     box-sizing: border-box;
     z-index: 100;
     font-family: Verdana, sans-serif;   
-    font-size: 18px;
-    margin: 0 0 5px;
-    transition: color .35s;
+    font-size: 1.5em;
+    margin: 0 auto;
+    transition: color .8s;
 }
 .acor-container label:hover {
-    color: #FFF;
+    color: rgb(214, 18, 18);
 }
 .acor-container input{
     display: none;
@@ -46,9 +57,9 @@
     float: right;
 }
 .acor-container input:checked + label {
-    background-color: #285f8f;
-    color: #FFF;
-    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
+    /* background-color: #285f8f; */
+    color: rgb(5, 5, 5);
+    /* box-shadow: 0 0.5em 1em rgba(0,0,0,0.4), 0 1em 1.5em rgba(0,0,0,0.3); */
 }
 .acor-container input:checked + label:before {
     transition: transform .35s;
