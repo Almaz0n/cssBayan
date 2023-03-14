@@ -1,73 +1,167 @@
-main {
-    width: 100%;
-    justify-content: center;
-    
-    
-}
-.acor-container {
-    max-width:auto;
-    min-width:auto;
-    width:auto;
-    display: block;
-    justify-content: center;
-    margin: auto;
-}
-.acor-container .acor-image {
-    color: rgba(73, 50, 50, 0.5);
-    width: calc(100%);
-    margin: auto;
-    height: 0;
-    line-height: auto;
-    padding: auto;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    transition: color 0.9s, padding 0.9s;
-    overflow: hidden;
-    font-family: Verdana, sans-serif; 
-    font-size: auto;
 }
-.acor-container .acor-image .image {
-    margin: auto;
+
+body {
+    background-color: rgb(201, 245, 201);
+}
+
+header {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+main {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px;
+    cursor: pointer;
+}
+
+p {
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: blue;
+    font-weight: 700;
+}
+
+input {
+    display: none;
+}
+
+#accord_1:checked~.img1 {
+    height: auto;
+    padding: 20px;
+}
+
+#accord_2:checked~.img2 {
+    height: auto;
+    padding: 20px;
+}
+
+#accord_3:checked~.img3 {
+    height: auto;
+    padding: 20px;
+}
+
+#accord_4:checked~.img4 {
+    height: auto;
+    padding: 20px;
+}
+
+#accord_5:checked~.img5 {
+    height: auto;
+    padding: 20px;
+}
+
+.head-label {
+    transition: all 1s;
+}
+
+.accordion {
+    border-top: 1px solid rgb(133, 130, 130);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .acor-image {
-    width: 70%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    transition: all 1s;
+    height: 0;
 }
 
-.acor-container label {
-    cursor: pointer;
-    display: block;
+.image {
+    max-width: 600px;
     width: 100%;
-    color: #0190f0;
-    font-weight: 300;
-    box-sizing: border-box;
-    z-index: 100;
-    font-family: Verdana, sans-serif;   
-    font-size: 1.5em;
-    margin: auto;
-    transition: color .9s;
+    height: auto;
+    left: 40%;
 }
-.acor-container label:hover {
-    
-    color: rgb(80, 214, 18);
-}
-.acor-container input{
+
+.icon-open {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
     display: none;
 }
-.acor-container label:before {
-    content: '\276F';
-    float: right;
+
+#accord_1,
+#accord_2,
+#accord_3,
+#accord_4,
+#accord_5 {
+    display: none;
 }
-.acor-container input:checked + label {
-    color: rgb(5, 5, 5);
+
+@media(hover: hover) {
+    main:hover .head-label .accordion .icon-open {
+        display: block;
+    }
+
+    main:hover .head-label .accordion p {
+        color: black;
+    }
+
+    .head-label:hover~.acor-image {
+        height: 450px;
+        padding: 20px;
+        transition: all 1s;
+    }
+
+    .img1:hover,
+    .img2:hover,
+    .img3:hover,
+    .img4:hover,
+    .img5:hover {
+        height: 450px;
+        padding: 20px;
+    }
+
+    .head-label:hover .accordion .icon-open {
+        transform: rotate(45deg);
+    }
+
+    .cont-accor:hover .icon-open {
+        transform: rotate(45deg);
+    }
 }
-.acor-container input:checked + label:before {
-    transition: transform .5s;
-    transform: rotate(90deg);
+
+
+@media (max-width: 1920px) {
+    p {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
 }
-.acor-container input:checked + label + .acor-image {
-    height: auto;
-    margin-top: auto;
-    color: #000;
-    padding: auto;
+
+@media (max-width: 820px) {
+    p {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    p {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
 }
