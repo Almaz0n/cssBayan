@@ -1,0 +1,164 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 800;
+}
+
+label {
+    font-size: 1.3em;
+    padding: 0.5em;
+}
+
+h1 {
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+.image {
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    padding: 0.2em;
+}
+
+.body {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.radio-button {
+    display: none;
+}
+
+.radio-button:checked+.image {
+    width: 25em;
+    height: 25em;
+}
+
+.head-label:has(.radio-button:checked) .icon-plys {
+    transform: rotate(45deg);
+    transition: all 0.7s;
+}
+
+.accordion {
+    border-top: 0.5em ridge rgb(128, 125, 125);
+}
+
+.head-label {
+    display: block;
+}
+
+.accord-p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-plys {
+    background-image: url(../cssBayan/images/172525_plus_icon.png);
+    background-color: transparent;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1em;
+    width: 1em;
+}
+
+.accordion:hover:has(.radio-button:not(:checked)) .image {
+    width: 25em;
+    height: 25em;
+    transition: all 0.7s;
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 100%;
+    }
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+    body {
+        font-size: 75%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+    body {
+        font-size: 55%;
+    }
+    
+    .accordion:hover:has(.radio-button:not(:checked)) .image {
+        width: 17em;
+        height: 17em;
+        transition: all 0.7s;
+    }
+
+    .radio-button:checked+.image {
+        width: 17em;
+        height: 17em;
+    }
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+    .accordion-big:hover .icon-plys {
+        opacity: 1;
+        transition: all 0.6s;
+    }
+
+    .accordion-big:hover .paragraf {
+        transition: all 0.7s;
+        color: black;
+    }
+    .paragraf {
+        color: rgb(2, 148, 206);
+        transition: all 0.7s;
+    }
+
+    .head-label:hover .icon-plys {
+        transform: rotate(45deg);
+        transition: all 0.6s;
+    }
+    
+    .head-label:hover,
+    .accordion:hover {
+        cursor: pointer;
+    }
+    
+    .icon-plys {
+        opacity: 0;
+    }
+
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .paragraf {
+        color: rgb(14, 13, 13);
+    }
+}
+
+.head-label:active:has(.radio-button) .paragraf {
+    color: rgb(6, 130, 247);
+}
+
+.head-label:has(.radio-button:checked) .paragraf {
+    color: rgb(8, 8, 8);
+}
+
+.head-label:active .image {
+    opacity: 0.4;
+    transition: 0.7s all;
+}
+/* end */
