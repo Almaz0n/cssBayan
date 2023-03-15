@@ -1,166 +1,163 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 body {
-    background-color: rgb(201, 245, 201);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 800;
 }
 
-header {
-    max-width: 1920px;
-    width: 100%;
-    margin: 0px auto;
-    padding: 15px;
+label {
+    font-size: 1.3em;
+    padding: 0.5em;
 }
 
-main {
-    max-width: 1920px;
-    width: 100%;
-    margin: 0px auto;
-    padding: 15px;
-    cursor: pointer;
-}
-
-p {
-    font-family: 'Times New Roman', Times, sans-serif;
-    font-size: 32px;
-    letter-spacing: 1px;
-    color: blue;
-    font-weight: 700;
-}
-
-input {
-    display: none;
-}
-
-#accord_1:checked~.img1 {
-    height: auto;
-    padding: 15px;
-}
-
-#accord_2:checked~.img2 {
-    height: auto;
-    padding: 15px;
-}
-
-#accord_3:checked~.img3 {
-    height: auto;
-    padding: 15px;
-}
-
-#accord_4:checked~.img4 {
-    height: auto;
-    padding: 15px;
-}
-
-#accord_5:checked~.img5 {
-    height: auto;
-    padding: 15px;
-}
-
-.head-label {
-    transition: all 1s;
-}
-
-.accordion {
-    border-top: 1px solid rgb(133, 130, 130);
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.acor-image {
-    display: flex;
-    justify-content: center;
-    transition: all 1s;
-    height: 0;
+h1 {
+    font-size: 2em;
+    padding: 0.5em;
 }
 
 .image {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    padding: 0.2em;
 }
 
-.icon-open {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+.body {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.radio-button {
     display: none;
 }
 
-#accord_1,
-#accord_2,
-#accord_3,
-#accord_4,
-#accord_5 {
-    display: none;
+.radio-button:checked+.image {
+    width: 25em;
+    height: 25em;
 }
 
-@media(hover: hover) {
-    main:hover .head-label .accordion .icon-open {
-        display: block;
+.head-label:has(.radio-button:checked) .icon-plys {
+    transform: rotate(45deg);
+    transition: all 0.7s;
+}
+
+.accordion {
+    border-top: 0.5em ridge rgb(128, 125, 125);
+}
+
+.head-label {
+    display: block;
+}
+
+.accord-p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-plys {
+    background-image: url(../cssBayan/images/172525_plus_icon.png);
+    background-color: transparent;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1em;
+    width: 1em;
+}
+
+.accordion:hover:has(.radio-button:not(:checked)) .image {
+    width: 25em;
+    height: 25em;
+    transition: all 0.7s;
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 100%;
+    }
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+    body {
+        font-size: 75%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+    body {
+        font-size: 55%;
+    }
+    
+    .accordion:hover:has(.radio-button:not(:checked)) .image {
+        width: 17em;
+        height: 17em;
+        transition: all 0.7s;
     }
 
-    main:hover .head-label .accordion p {
+    .radio-button:checked+.image {
+        width: 17em;
+        height: 17em;
+    }
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+    .accordion-big:hover .icon-plys {
+        opacity: 1;
+        transition: all 0.6s;
+    }
+
+    .accordion-big:hover .paragraf {
+        transition: all 0.7s;
         color: black;
     }
-
-    .head-label:hover~.acor-image {
-        height: 450px;
-        padding: 15px;
-        transition: all 1s;
+    .paragraf {
+        color: rgb(2, 148, 206);
+        transition: all 0.7s;
     }
 
-    .img1:hover,
-    .img2:hover,
-    .img3:hover,
-    .img4:hover,
-    .img5:hover {
-        height: 450px;
-        padding: 15px;
-    }
-
-    .head-label:hover .accordion .icon-open {
+    .head-label:hover .icon-plys {
         transform: rotate(45deg);
+        transition: all 0.6s;
+    }
+    
+    .head-label:hover,
+    .accordion:hover {
+        cursor: pointer;
+    }
+    
+    .icon-plys {
+        opacity: 0;
     }
 
-    .cont-accor:hover .icon-open {
-        transform: rotate(45deg);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .paragraf {
+        color: rgb(14, 13, 13);
     }
 }
 
-
-@media (max-width: 1920px) {
-    p {
-        font-size: 24px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
+.head-label:active:has(.radio-button) .paragraf {
+    color: rgb(6, 130, 247);
 }
 
-@media (max-width: 820px) {
-    p {
-        font-size: 18px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
+.head-label:has(.radio-button:checked) .paragraf {
+    color: rgb(8, 8, 8);
 }
 
-@media (max-width: 320px) {
-    p {
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
+.head-label:active .image {
+    opacity: 0.4;
+    transition: 0.7s all;
 }
